@@ -1,16 +1,19 @@
-.grey {
+.card {
   width: 100%;
   padding: 25px 30px 25px;
   margin: 0 auto 24px;
   font-family: "Roboto";
   border-radius: 3px;
+}
 
+.grey {
+  composes: card;
   background-color: #37383a;
   color: var(--theme-dark-second-text-color);
 }
 
 .colorful {
-  composes: default;
+  composes: card;
   border: 2px dashed;
   border-color: #759cc0;
   background: #212123;

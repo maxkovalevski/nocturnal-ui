@@ -18,6 +18,6 @@
 }
 
 .active {
-  composes: dark-disabled;
+  composes: disabled;
   background: var(--theme-dark-post-excerpt-bg-color);
 }
