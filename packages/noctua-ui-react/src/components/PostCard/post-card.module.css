@@ -1,0 +1,94 @@
+.card {
+  flex: 1 1 calc(33% - 30px);
+  margin: 0 15px 30px;
+  width: 100%;
+}
+
+.tile {
+  composes: card;
+  max-width: calc(33% - 25px);
+}
+
+.row {
+  composes: card;
+  flex: 1 1 calc(100% - 30px);
+  display: flex;
+  flex-direction: row-reverse;
+  padding: 15px 15px;
+  border-radius: 4px;
+  background: #37373a;
+}
+
+.row .thumbnail {
+  height: 175px;
+  margin-top: 10px;
+  flex: 1 1 35%;
+  margin-left: 35px;
+}
+
+.row .content {
+  flex: 1 1 65%;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.row .header {
+  flex-direction: column-reverse;
+}
+
+.thumbnail {
+  position: relative;
+  height: 200px;
+  display: block;
+  margin: 0 0 0.5em;
+}
+
+.title-on-hover:hover {
+  text-decoration: underline;
+}
+
+.title {
+  composes: title-on-hover;
+  margin: 0 0 0.5em;
+  display: inline-block;
+  font-size: 1.4rem;
+  line-height: 1.2;
+  font-family: "Roboto Mono", monospace;
+  color: var(--theme-dark-second-text-color);
+}
+
+@media (max-width: 1360px) {
+  .tile {
+    flex: 1 1 calc(50% - 30px);
+    max-width: calc(50% - 30px);
+  }
+}
+
+@media (max-width: 690px) {
+  .tile {
+    flex: 1 1 calc(100% - 30px);
+    max-width: calc(100% - 30px);
+  }
+
+  .row {
+    flex-direction: column;
+  }
+
+  .row .thumbnail {
+    width: 100%;
+    height: 200px;
+    margin-left: 0px;
+  }
+
+  .row .content {
+    margin-left: 0;
+  }
+
+  .row .header {
+    flex-direction: column;
+  }
+}

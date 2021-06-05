@@ -1,0 +1,23 @@
+.link {
+  font-family: "Roboto Mono", monospace;
+  padding: 10px 15px;
+  border-radius: 3px;
+  margin-right: 12px;
+
+  color: var(--theme-dark-second-text-color);
+}
+
+.link:hover {
+  background: var(--theme-dark-post-excerpt-bg-color);
+}
+
+.disabled {
+  composes: link;
+  color: rgb(204 204 205 / 0.64);
+  pointer-events: none;
+}
+
+.active {
+  composes: dark-disabled;
+  background: var(--theme-dark-post-excerpt-bg-color);
+}

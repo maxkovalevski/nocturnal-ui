@@ -1,0 +1,8 @@
+{
+  "name": "noctua-ui",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ]
+}

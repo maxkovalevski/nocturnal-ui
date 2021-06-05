@@ -1,0 +1,23 @@
+.breadcrumbs {
+  font-family: "Roboto Mono";
+  margin-bottom: 1rem;
+}
+
+.breadcrumbs span:not(.splitter) {
+  opacity: 0.6;
+}
+
+.splitter {
+  margin: 0 0.5rem;
+  opacity: 1;
+}
+
+.link {
+  color: var(--theme-dark-second-text-color);
+}
+
+@media (max-width: 690px) {
+  .breadcrumbs {
+    /* padding: 0 30px; */
+  }
+}

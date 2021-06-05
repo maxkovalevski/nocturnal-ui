@@ -1,0 +1,23 @@
+.excerpt {
+  padding: 10px;
+  margin: 0 0 0.8em;
+  text-overflow: ellipsis;
+  overflow-wrap: normal;
+  /* max-height: 120px; */
+  border-radius: 3px;
+}
+
+.excerpt p {
+  margin: 0;
+  font-family: "Roboto";
+}
+
+.first {
+  composes: excerpt;
+  background: var(--theme-dark-post-excerpt-bg-color);
+}
+
+.second {
+  composes: excerpt;
+  background: #2a2b2d;
+}

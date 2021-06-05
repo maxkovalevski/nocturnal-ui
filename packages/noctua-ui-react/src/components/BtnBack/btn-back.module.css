@@ -1,0 +1,42 @@
+.wrapper {
+  display: inline-block;
+  font-family: "Roboto Mono";
+}
+
+.wrapper button {
+  border: none;
+  background: no-repeat;
+  outline: none;
+}
+
+.wrapper a {
+  color: var(--theme-dark-second-text-color);
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.left:hover {
+  opacity: 0.6;
+}
+
+.left span {
+  margin-left: 10px;
+}
+
+.right {
+  composes: left;
+  flex-direction: row-reverse;
+}
+
+.right svg {
+  transform: rotate(180deg);
+}
+
+.right span {
+  margin-left: 0;
+  margin-right: 10px;
+}

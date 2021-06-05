@@ -1,0 +1,21 @@
+@value borderline: 2px solid;
+
+.active-on-hover:hover {
+  border-bottom: borderline;
+}
+
+.navlink {
+  composes: active-on-hover;
+  margin-right: 15px;
+  color: var(--theme-dark-second-text-color);
+}
+
+.navlink:last-child {
+  margin-right: 0;
+}
+
+.active {
+  composes: navlink;
+  color: var(--theme-dark-second-text-color);
+  border-bottom: borderline;
+}

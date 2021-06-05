@@ -1,0 +1,18 @@
+.navbar {
+  padding: 0 15px;
+  font-size: 1rem;
+  font-family: "Roboto Mono", monospace;
+
+  color: var(--theme-dark-second-text-color);
+}
+
+.line {
+  margin-left: 10px;
+  border-right: 1px solid;
+  width: 1px;
+  padding: 2px 0;
+}
+
+.navbar .line {
+  border-color: var(--theme-dark-second-text-color);
+}

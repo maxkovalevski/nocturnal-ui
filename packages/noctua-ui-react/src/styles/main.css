@@ -1,0 +1,14 @@
+@import "./variables.css";
+@import "./reset.css";
+@import "./base.css";
+@import "./fonts.css";
+
+body {
+  font-family: "Roboto", sans-serif;
+  line-height: 1.5;
+  text-rendering: optimizeSpeed;
+  -webkit-font-smoothing: antialiased;
+
+  background-color: var(--theme-dark-main-bg-color);
+  color: var(--theme-dark-second-text-color);
+}
