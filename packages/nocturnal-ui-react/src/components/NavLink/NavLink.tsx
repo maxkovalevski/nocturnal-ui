@@ -3,7 +3,7 @@ import { LinkProps, Link } from "@reach/router";
 
 import * as styles from "./nav-link.module.css";
 
-interface NavLinkProps
+export interface NavLinkProps
   extends Pick<LinkProps<{}>, "to" | "className" | "children"> {
   isActive?: boolean;
 }

@@ -17,7 +17,7 @@ export interface Post {
   imgSrc?: string;
 }
 
-interface PostsListProps {
+export interface PostsListProps {
   posts: Post[];
   gridView?: "row" | "tile";
   imgRender?(post: Post): React.ReactNode;

@@ -2,7 +2,7 @@ import React, { FC } from "react";
 
 import { PaginationLink } from "../PaginationLink";
 
-interface PaginationProps {
+export interface PaginationProps {
   currentPage: number;
   pagesCount: number;
   routePath: string;

@@ -2,7 +2,7 @@ import React, { FC } from "react";
 
 import * as styles from "./info-card.module.css";
 
-interface InfoCardProps {
+export interface InfoCardProps {
   variant?: "grey" | "colorful";
 }
 

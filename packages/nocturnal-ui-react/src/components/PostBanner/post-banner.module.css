@@ -12,10 +12,19 @@
 .banner h3 {
   display: inline-block;
   margin-bottom: 1.2rem;
+
+  font-family: Roboto Mono, monospace;
+  font-weight: 700;
+
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+  border-bottom-color: #484848;
+  margin-bottom: 2rem;
 }
 
-.banner p {
+.content > * {
   margin: 0 0 1em 0;
+  font-size: 1.125rem !important;
 }
 
 .input {
@@ -28,6 +37,8 @@
   width: 100%;
   /* color: #b5b6b7; */
   color: #333;
+
+  font-size: 1.3rem;
 }
 
 .btn {
@@ -46,6 +57,8 @@
   border-radius: 4px;
   font-weight: bold;
   border: 1px solid #1c1d1e;
+
+  font-size: 1.3rem;
 }
 
 /* .subscribe-btn:hover {

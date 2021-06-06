@@ -2,7 +2,7 @@ import React, { CSSProperties, FC } from "react";
 
 import * as styles from "./page-title.module.css";
 
-interface PageTitleProps {
+export interface PageTitleProps {
   style?: CSSProperties;
 }
 

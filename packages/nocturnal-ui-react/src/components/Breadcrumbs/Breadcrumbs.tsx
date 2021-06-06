@@ -3,7 +3,7 @@ import { Link } from "@reach/router";
 
 import * as styles from "./breadcrumbs.module.css";
 
-interface BreadcrumbsProps {
+export interface BreadcrumbsProps {
   items: { to?: string; label: string }[];
 }
 

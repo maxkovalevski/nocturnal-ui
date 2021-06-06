@@ -3,21 +3,21 @@ import { Link } from "@reach/router";
 
 import * as styles from "./tags-pile.module.css";
 
-interface TagData {
+export interface TagData {
   name: string;
   count: number;
-  linkPrefix: string;
+  link: string;
 }
 
-interface TagsPile {
+export interface TagsPileProps {
   tags: TagData[];
 }
 
-export const TagsPile: FC<TagsPile> = ({ tags }) => {
+export const TagsPile: FC<TagsPileProps> = ({ tags }) => {
   return (
     <nav className={styles.list}>
-      {tags.map(({ name, count, linkPrefix }) => (
-        <Link to={`${linkPrefix}/${name}`} key={`all-tags-${name}`}>
+      {tags.map(({ name, count, link }) => (
+        <Link to={link} key={`all-tags-${name}`}>
           {name} ({count}){" "}
         </Link>
       ))}

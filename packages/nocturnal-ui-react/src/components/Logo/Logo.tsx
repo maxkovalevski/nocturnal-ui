@@ -3,7 +3,7 @@ import { Link } from "@reach/router";
 
 import * as styles from "./logo.module.css";
 
-interface LogoProps {
+export interface LogoProps {
   title: string;
 }
 

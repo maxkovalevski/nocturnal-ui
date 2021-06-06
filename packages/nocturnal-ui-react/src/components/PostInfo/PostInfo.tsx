@@ -1,20 +1,20 @@
-import React from "react";
+import React, { FC } from "react";
 
 // import { getFormattedDateString } from "../utils";
 
 import * as styles from "./post-info.module.css";
 
-interface PostInfoProps {
+export interface PostInfoProps {
   date: string | null;
   // commentsCount: number;
   // postLink?: string;
 }
 
-export const PostInfo = ({
+export const PostInfo: FC<PostInfoProps> = ({
   date,
-}: // commentsCount,
-// postLink = "",
-PostInfoProps) => {
+  // postLink = "",
+  // commentsCount,
+}) => {
   return (
     <div className={styles.info}>
       {date && <time dateTime={date}>{date}</time>}

@@ -6,7 +6,7 @@ import { NavLink } from "../NavLink";
 
 import * as styles from "./navbar.module.css";
 
-interface NavbarProps {
+export interface NavbarProps {
   currentPath?: string;
   items: NavItem[];
   withLine?: boolean;

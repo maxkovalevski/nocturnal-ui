@@ -4,7 +4,7 @@ import { PostTag } from "../PostTag";
 
 import * as styles from "./post-tags.module.css";
 
-interface PostTagsProps {
+export interface PostTagsProps {
   tags: {
     name: string;
     link?: string;

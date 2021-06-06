@@ -3,7 +3,7 @@ import { Link } from "@reach/router";
 
 import * as styles from "./post-tag.module.css";
 
-interface PostTagProps {
+export interface PostTagProps {
   link?: string;
 }
 

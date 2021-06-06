@@ -3,7 +3,8 @@ import { LinkProps, Link } from "@reach/router";
 
 import * as styles from "./pagination-link.module.css";
 
-interface PaginationLinkProps extends Pick<LinkProps<{}>, "to" | "children"> {
+export interface PaginationLinkProps
+  extends Pick<LinkProps<{}>, "to" | "children"> {
   isActive?: boolean;
   isDisabled?: boolean;
 }

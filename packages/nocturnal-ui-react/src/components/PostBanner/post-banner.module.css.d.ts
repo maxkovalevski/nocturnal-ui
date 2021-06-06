@@ -1,5 +1,6 @@
 declare const styles: {
   readonly "banner": string;
+  readonly "content": string;
   readonly "input": string;
   readonly "btn": string;
   readonly "form": string;

@@ -2,7 +2,7 @@ import React, { FC } from "react";
 
 import * as styles from "./post-banner.module.css";
 
-interface PostBannerProps {
+export interface PostBannerProps {
   title: React.ReactNode;
   content: React.ReactNode;
   btnTitle: string;
@@ -36,7 +36,7 @@ export const PostBanner: FC<PostBannerProps> = ({
   return (
     <div className={styles.banner}>
       <h3>{title}</h3>
-      <div>{content}</div>
+      <div className={styles.content}>{content}</div>
       <form className={styles.form} onSubmit={onSubmit}>
         <input
           className={styles.input}

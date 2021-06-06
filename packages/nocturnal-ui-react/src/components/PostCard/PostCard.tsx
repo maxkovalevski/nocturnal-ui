@@ -9,7 +9,7 @@ import { MAX_TAGS_COUNT } from "../../common/constants";
 
 import * as styles from "./post-card.module.css";
 
-interface PostCardProps {
+export interface PostCardProps {
   id?: string;
   view?: "row" | "tile";
   title: string;

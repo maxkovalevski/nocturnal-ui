@@ -2,7 +2,7 @@ import React, { FC } from "react";
 
 import * as styles from "./text-content.module.css";
 
-interface TextContentProps {
+export interface TextContentProps {
   imgSrc?: string;
   imgView?: React.ReactNode;
 }
