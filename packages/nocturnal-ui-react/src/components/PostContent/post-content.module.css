@@ -1,0 +1,26 @@
+.thumbnail {
+  height: 500px;
+}
+
+.thumbnail > div,
+.thumbnail > img {
+  height: 100%;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+
+.thumbnail > img {
+  width: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 690px) {
+  .thumbnail {
+    height: 250px;
+  }
+
+  .thumbnail > div,
+  .thumbnail > img {
+    border-radius: 0;
+  }
+}

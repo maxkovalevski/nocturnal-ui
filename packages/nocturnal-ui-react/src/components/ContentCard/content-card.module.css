@@ -22,20 +22,17 @@
   padding: 40px 60px 40px 60px;
 }
 
-.image {
-  height: 500px;
+.top,
+.bottom {
+  overflow-x: hidden;
 }
 
-.image > div,
-.image > img {
-  height: 100%;
-  border-top-left-radius: 3px;
-  border-top-right-radius: 3px;
+.top {
+  border-radius: 3px 3px 0 0;
 }
 
-.image > img {
-  width: 100%;
-  object-fit: cover;
+.bottom {
+  border-radius: 0 0 3px 3px;
 }
 
 @media (max-width: 1100px) {
@@ -52,15 +49,6 @@
 
   .inner {
     padding: 20px 20px 40px 20px;
-  }
-
-  .image {
-    height: 250px;
-  }
-
-  .image > div,
-  .image > img {
-    border-radius: 0;
   }
 
   .content h1 {
@@ -110,15 +98,9 @@
   border-bottom-style: solid;
 }
 
-.light h2,
-.light h3,
-.light hr {
-  border-bottom-color: #f1f4f8;
-}
-
-.dark h2,
-.dark h3,
-.dark hr {
+.content h2,
+.content h3,
+.content hr {
   border-bottom-color: #484848;
 }
 
@@ -138,11 +120,7 @@ ul {
   font-family: "Roboto Mono", monospace;
 }
 
-.light blockquote {
-  background: #f1f4f8;
-}
-
-.dark blockquote {
+.content blockquote {
   background: #484848;
 }
 
@@ -169,19 +147,13 @@ ul {
   display: inline-block;
 }
 
-.light :not(pre) > code {
-  color: #b83232;
-  background-color: #dadada;
-  border: 1px solid rgb(0, 0, 0, 0.1);
-}
-
-.dark :not(pre) > code {
+.content :not(pre) > code {
   background-color: #212121;
   border: 1px solid rgba(0, 0, 0, 0.15);
   color: #dc940d;
 }
 
-.dark table tr {
+.content table tr {
   border-top: 1px solid #757575;
 }
 
@@ -189,38 +161,18 @@ ul {
   font-weight: bold;
 }
 
-.dark table th,
-.dark table td {
+.content table th,
+.content table td {
   border: 1px solid #757575;
   padding: 6px 13px;
 }
 
-.dark table tr {
+.content table tr {
   border-top: 1px solid #757575;
 }
 
-.dark table th,
-.dark table td {
+.content table th,
+.content table td {
   border: 1px solid #757575;
-  padding: 6px 13px;
-}
-
-.light table tr {
-  border-top: 1px solid #ccc;
-}
-
-.light table th,
-.light table td {
-  border: 1px solid #ddd;
-  padding: 6px 13px;
-}
-
-.light table tr {
-  border-top: 1px solid #ccc;
-}
-
-.light table th,
-.light table td {
-  border: 1px solid #ddd;
   padding: 6px 13px;
 }
