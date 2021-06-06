@@ -21,7 +21,7 @@ interface BtnBackMainProps {
   style?: CSSProperties;
 }
 
-type BtnBackProps = BtnBackMainProps & BtnBackTypeProps;
+export type BtnBackProps = BtnBackMainProps & BtnBackTypeProps;
 
 export const BtnBack: FC<BtnBackProps> = ({
   children,
@@ -48,7 +48,7 @@ export const BtnBack: FC<BtnBackProps> = ({
   return (
     <div className={styles.wrapper} style={style}>
       {props.type === "link" ? (
-        <Link to={props.to} className={styles[direction]}>
+        <Link to={props.to || ""} className={styles[direction]}>
           {view}
         </Link>
       ) : (
