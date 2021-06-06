@@ -21,3 +21,4 @@ export { Pagination } from "./Pagination";
 export { BtnBack } from "./BtnBack";
 export { Table } from "./Table";
 export { Code } from "./Code";
+export { SidePanel } from "./SidePanel";

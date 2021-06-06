@@ -5,7 +5,7 @@ import { Navbar } from "../Navbar";
 import { Logo } from "../Logo";
 import { Container } from "../Container";
 
-import { NavItem } from "../../types";
+import { NavItem } from "../../common/types";
 
 import * as headerStyles from "./header.module.css";
 
@@ -15,7 +15,7 @@ interface HeaderProps {
 }
 
 export const Header: FC<HeaderProps> = ({ logoTitle, navItems }) => {
-  const { pathname } = useLocation();
+  // const { pathname } = useLocation();
 
   return (
     <header className={headerStyles.header}>
@@ -23,7 +23,7 @@ export const Header: FC<HeaderProps> = ({ logoTitle, navItems }) => {
         <div className={headerStyles.inner}>
           <Logo title={logoTitle} />
           <div className={headerStyles.row}>
-            <Navbar items={navItems} currentPath={pathname} />
+            <Navbar items={navItems} />
           </div>
         </div>
       </Container>

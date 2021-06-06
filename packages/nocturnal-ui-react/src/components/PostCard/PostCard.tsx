@@ -5,7 +5,7 @@ import { PostCardExcerpt, VARIANT } from "./components/PostCardExcerpt";
 import { PostTags } from "../PostTags";
 import { PostInfo } from "../PostInfo";
 
-import { MAX_TAGS_COUNT } from "../../constants";
+import { MAX_TAGS_COUNT } from "../../common/constants";
 
 import * as styles from "./post-card.module.css";
 
@@ -37,13 +37,12 @@ export const PostCard: FC<PostCardProps> = ({
 }) => {
   return (
     <article className={styles[view]}>
-      {imgSrc ||
-        (imgView && (
-          <Link className={styles.thumbnail} to={link}>
-            {imgSrc && <img src={imgSrc} alt={title} />}
-            {imgView && imgView}
-          </Link>
-        ))}
+      {(imgSrc || imgView) && (
+        <Link className={styles.thumbnail} to={link}>
+          {imgSrc && <img src={imgSrc} alt={title} />}
+          {imgView && imgView}
+        </Link>
+      )}
       <div className={styles.content}>
         <header className={styles.header}>
           <PostTags tags={tags} maxCount={MAX_TAGS_COUNT.card} id={id} />

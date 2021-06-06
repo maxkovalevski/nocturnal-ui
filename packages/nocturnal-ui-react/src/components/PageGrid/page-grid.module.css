@@ -3,6 +3,11 @@
   align-items: flex-start;
 }
 
+.reverse {
+  composes: page;
+  flex-direction: row-reverse;
+}
+
 @media (max-width: 1100px) {
   .page {
     flex-direction: column-reverse;

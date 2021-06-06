@@ -1,6 +1,6 @@
 import React, { FC, ReactNode } from "react";
 
-import { NavItem } from "../../types";
+import { NavItem } from "../../common/types";
 
 import { NavLink } from "../NavLink";
 
