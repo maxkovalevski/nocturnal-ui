@@ -1,5 +1,7 @@
 import React, { FC } from "react";
 
+import { LinkView } from "../../typings/LinkView";
+
 import { PostCard } from "../PostCard";
 
 import * as styles from "./posts-list.module.css";
@@ -21,12 +23,14 @@ export interface PostsListProps {
   posts: Post[];
   gridView?: "row" | "tile";
   imgRender?(post: Post): React.ReactNode;
+  linkView?: LinkView;
 }
 
 export const PostsList: FC<PostsListProps> = ({
   posts,
   gridView = "row",
   imgRender,
+  linkView
 }) => {
   return (
     <div className={styles.list}>
@@ -36,6 +40,7 @@ export const PostsList: FC<PostsListProps> = ({
           {...post}
           view={gridView}
           imgView={imgRender ? () => imgRender?.(post) : undefined}
+          linkView={linkView}
         />
       ))}
     </div>
