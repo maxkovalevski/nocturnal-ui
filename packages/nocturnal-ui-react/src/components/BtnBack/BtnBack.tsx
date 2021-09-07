@@ -1,5 +1,6 @@
 import React, { CSSProperties, FC } from "react";
-import { Link } from "@reach/router";
+
+import { LinkView } from "../../typings/LinkView";
 
 import * as styles from "./btn-back.module.css";
 
@@ -19,6 +20,7 @@ interface BtnBackMainProps {
   children: string;
   direction?: "left" | "right";
   style?: CSSProperties;
+  linkView?: LinkView;
 }
 
 export type BtnBackProps = BtnBackMainProps & BtnBackTypeProps;
@@ -27,6 +29,7 @@ export const BtnBack: FC<BtnBackProps> = ({
   children,
   direction = "left",
   style = {},
+  linkView = ({ to, children, ...props }) => <a href={to} {...props}>{children}</a>,
   ...props
 }) => {
   const view = (
@@ -47,11 +50,7 @@ export const BtnBack: FC<BtnBackProps> = ({
 
   return (
     <div className={styles.wrapper} style={style}>
-      {props.type === "link" ? (
-        <Link to={props.to || ""} className={styles[direction]}>
-          {view}
-        </Link>
-      ) : (
+      {props.type === "link" ? linkView?.({ to: props.to || "", className: styles[direction], children: view }) : (
         <button onClick={props.onClick} className={styles[direction]}>
           {view}
         </button>

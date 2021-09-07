@@ -16,4 +16,5 @@ const Template: Story<BtnBackProps> = (args) => <BtnBack {...args} />;
 export const Main = Template.bind({});
 Main.args = {
   children: "Click me",
+  type: 'link'
 };

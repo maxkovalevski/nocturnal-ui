@@ -1,5 +1,4 @@
 import React, { FC } from "react";
-import { useLocation } from "@reach/router";
 
 import { Navbar } from "../Navbar";
 import { Logo } from "../Logo";

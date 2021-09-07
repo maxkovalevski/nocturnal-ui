@@ -1,11 +1,12 @@
 import React, { FC } from "react";
-import { Link } from "@reach/router";
 
 import { PostCardExcerpt, VARIANT } from "./components/PostCardExcerpt";
 import { PostTags } from "../PostTags";
 import { PostInfo } from "../PostInfo";
 
 import { MAX_TAGS_COUNT } from "../../common/constants";
+
+import { LinkView } from "../../typings/LinkView";
 
 import * as styles from "./post-card.module.css";
 
@@ -22,6 +23,7 @@ export interface PostCardProps {
   link: string;
   imgSrc?: string;
   imgView?: React.ReactNode;
+  linkView?: LinkView;
 }
 
 export const PostCard: FC<PostCardProps> = ({
@@ -34,21 +36,18 @@ export const PostCard: FC<PostCardProps> = ({
   view = "tile",
   imgSrc,
   imgView,
+  linkView = ({ to, children, ...props }) => <a href={to} {...props}>{children}</a>
 }) => {
   return (
     <article className={styles[view]}>
-      {(imgSrc || imgView) && (
-        <Link className={styles.thumbnail} to={link}>
+      {(imgSrc || imgView) && linkView?.({ to: link, className: styles.thumbnail, children: <>
           {imgSrc && <img src={imgSrc} alt={title} />}
           {imgView && imgView}
-        </Link>
-      )}
+      </>})}
       <div className={styles.content}>
         <header className={styles.header}>
-          <PostTags tags={tags} maxCount={MAX_TAGS_COUNT.card} id={id} />
-          <Link to={link} className={styles.title} title={title}>
-            {title}
-          </Link>
+          <PostTags tags={tags} maxCount={MAX_TAGS_COUNT.card} id={id} linkView={linkView} />
+          {linkView?.({ to: link, children: title, className: styles.title })}
         </header>
         <section>
           <PostCardExcerpt

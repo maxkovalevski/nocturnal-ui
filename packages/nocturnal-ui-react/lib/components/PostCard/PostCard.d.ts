@@ -1,5 +1,6 @@
 import React, { FC } from "react";
-interface PostCardProps {
+import { LinkView } from "../../typings/LinkView";
+export interface PostCardProps {
     id?: string;
     view?: "row" | "tile";
     title: string;
@@ -12,6 +13,6 @@ interface PostCardProps {
     link: string;
     imgSrc?: string;
     imgView?: React.ReactNode;
+    linkView?: LinkView;
 }
 export declare const PostCard: FC<PostCardProps>;
-export {};

@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-interface PostBannerProps {
+export interface PostBannerProps {
     title: React.ReactNode;
     content: React.ReactNode;
     btnTitle: string;
@@ -16,4 +16,3 @@ interface PostBannerProps {
     status?: "initial" | "success" | "error";
 }
 export declare const PostBanner: FC<PostBannerProps>;
-export {};

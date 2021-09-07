@@ -11,10 +11,9 @@ export interface Post {
     link: string;
     imgSrc?: string;
 }
-interface PostsListProps {
+export interface PostsListProps {
     posts: Post[];
     gridView?: "row" | "tile";
     imgRender?(post: Post): React.ReactNode;
 }
 export declare const PostsList: FC<PostsListProps>;
-export {};

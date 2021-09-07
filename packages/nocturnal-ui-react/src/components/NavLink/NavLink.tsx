@@ -1,17 +1,20 @@
 import React, { FC } from "react";
-import { LinkProps, Link } from "@reach/router";
 
 import * as styles from "./nav-link.module.css";
+import { LinkView } from "../../typings/LinkView";
 
-export interface NavLinkProps
-  extends Pick<LinkProps<{}>, "to" | "className" | "children"> {
+export interface NavLinkProps {
   isActive?: boolean;
+  linkView?: LinkView;
+  to: string;
+  className?: string;
 }
 
 export const NavLink: FC<NavLinkProps> = ({
   to,
   children,
   isActive = false,
+  linkView = ({ to, children, ...props }) => <a href={to} {...props}>{children}</a>
 }) => {
   const styleName = isActive ? "active" : "navlink";
 
@@ -21,11 +24,7 @@ export const NavLink: FC<NavLinkProps> = ({
         <a href={to} className={styles[styleName]}>
           {children}
         </a>
-      ) : (
-        <Link to={to} className={styles[styleName]}>
-          {children}
-        </Link>
-      )}
+      ) : linkView?.({ to, children, className: styles[styleName] })}
     </>
   );
 };

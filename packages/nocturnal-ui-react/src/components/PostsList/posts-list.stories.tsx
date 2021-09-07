@@ -41,7 +41,6 @@ Main.args = {
         },
       ],
       link: "/posts/first-post",
-      imgSrc: "https://source.unsplash.com/random?orientation=landscape",
     },
     {
       id: "2",

@@ -1,5 +1,6 @@
 import React, { FC } from "react";
-import { Link } from "@reach/router";
+
+import { LinkView } from "../../typings/LinkView";
 
 import * as styles from "./tags-pile.module.css";
 
@@ -11,16 +12,16 @@ export interface TagData {
 
 export interface TagsPileProps {
   tags: TagData[];
+  linkView?: LinkView;
 }
 
-export const TagsPile: FC<TagsPileProps> = ({ tags }) => {
+export const TagsPile: FC<TagsPileProps> = ({
+  tags,
+  linkView = ({ to, children, ...props }) => <a href={to} {...props}>{children}</a>
+}) => {
   return (
     <nav className={styles.list}>
-      {tags.map(({ name, count, link }) => (
-        <Link to={link} key={`all-tags-${name}`}>
-          {name} ({count}){" "}
-        </Link>
-      ))}
+      {tags.map(({ name, count, link }) => <React.Fragment key={`all-tags-${name}`}>{linkView({ to: link, children: `${name} (${count})` })}</React.Fragment>)}
     </nav>
   );
 };

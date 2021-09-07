@@ -1,4 +1,5 @@
 import React, { FC } from "react";
+import { LinkView } from "../../typings/LinkView";
 
 import { PaginationLink } from "../PaginationLink";
 
@@ -7,12 +8,14 @@ export interface PaginationProps {
   pagesCount: number;
   routePath: string;
   pageRoutePath?: string;
+  linkView?: LinkView;
 }
 
 export const Pagination: FC<PaginationProps> = ({
   currentPage,
   pagesCount,
   routePath,
+  linkView,
   pageRoutePath = "/page",
 }) => {
   const fullPageRoutePath = `${routePath}${pageRoutePath}`;
@@ -39,6 +42,7 @@ export const Pagination: FC<PaginationProps> = ({
 
         return (
           <PaginationLink
+            linkView={linkView}
             isActive={currentPage === pageNumber}
             key={`page-${pageNumber}`}
             to={
@@ -51,7 +55,7 @@ export const Pagination: FC<PaginationProps> = ({
           </PaginationLink>
         );
       })}
-      <PaginationLink key="page-next" to={nextPagePath} isDisabled={isLast}>
+      <PaginationLink linkView={linkView} key="page-next" to={nextPagePath} isDisabled={isLast}>
         &raquo;
       </PaginationLink>
     </div>

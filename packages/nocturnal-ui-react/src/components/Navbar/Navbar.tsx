@@ -1,6 +1,7 @@
 import React, { FC, ReactNode } from "react";
 
 import { NavItem } from "../../common/types";
+import { LinkView } from "../../typings/LinkView";
 
 import { NavLink } from "../NavLink";
 
@@ -11,6 +12,7 @@ export interface NavbarProps {
   items: NavItem[];
   withLine?: boolean;
   contentAfter?: ReactNode;
+  linkView?: LinkView;
 }
 
 export const Navbar: FC<NavbarProps> = ({
@@ -18,6 +20,7 @@ export const Navbar: FC<NavbarProps> = ({
   currentPath = "",
   withLine = false,
   contentAfter,
+  linkView,
 }) => {
   return (
     <nav className={styles.navbar}>
@@ -28,6 +31,7 @@ export const Navbar: FC<NavbarProps> = ({
           isActive={
             path === "/" ? currentPath === path : currentPath.includes(path)
           }
+          linkView={linkView}
         >
           {name}
         </NavLink>

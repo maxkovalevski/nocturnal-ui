@@ -1,12 +1,14 @@
 import React, { FC } from "react";
-import { LinkProps, Link } from "@reach/router";
+
+import { LinkView } from "../../typings/LinkView";
 
 import * as styles from "./pagination-link.module.css";
 
-export interface PaginationLinkProps
-  extends Pick<LinkProps<{}>, "to" | "children"> {
+export interface PaginationLinkProps {
+  to: string;
   isActive?: boolean;
   isDisabled?: boolean;
+  linkView?: LinkView;
 }
 
 export const PaginationLink: FC<PaginationLinkProps> = ({
@@ -14,12 +16,13 @@ export const PaginationLink: FC<PaginationLinkProps> = ({
   isActive = false,
   isDisabled = false,
   children,
+  linkView = ({ to, children, ...props }) => <a href={to} {...props}>{children}</a>
 }) => {
   const cls = isDisabled ? "disabled" : isActive ? "active" : "link";
 
   return (
-    <Link to={to} className={styles[cls]}>
-      {children}
-    </Link>
+    <>
+      {linkView({ to, children, className: styles[cls] })}
+    </>
   );
 };

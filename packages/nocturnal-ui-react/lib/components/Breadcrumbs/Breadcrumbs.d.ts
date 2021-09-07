@@ -1,9 +1,10 @@
 import { FC } from "react";
-interface BreadcrumbsProps {
+import { LinkView } from "../../typings/LinkView";
+export interface BreadcrumbsProps {
     items: {
         to?: string;
         label: string;
     }[];
+    linkView: LinkView;
 }
 export declare const Breadcrumbs: FC<BreadcrumbsProps>;
-export {};

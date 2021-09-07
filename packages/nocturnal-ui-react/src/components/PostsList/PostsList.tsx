@@ -35,7 +35,7 @@ export const PostsList: FC<PostsListProps> = ({
           key={post.id || index}
           {...post}
           view={gridView}
-          imgView={() => imgRender?.(post)}
+          imgView={imgRender ? () => imgRender?.(post) : undefined}
         />
       ))}
     </div>

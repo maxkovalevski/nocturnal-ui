@@ -1,5 +1,7 @@
 import React, { FC } from "react";
 
+import { LinkView } from "../../typings/LinkView";
+
 import { PostTag } from "../PostTag";
 
 import * as styles from "./post-tags.module.css";
@@ -12,6 +14,7 @@ export interface PostTagsProps {
   direction?: "row" | "column";
   maxCount?: number;
   id?: string;
+  linkView?: LinkView;
 }
 
 export const PostTags: FC<PostTagsProps> = ({
@@ -19,6 +22,7 @@ export const PostTags: FC<PostTagsProps> = ({
   id = "",
   direction = "row",
   maxCount = tags.length,
+  linkView
 }) => {
   if (!tags.length) {
     return null;
@@ -35,7 +39,7 @@ export const PostTags: FC<PostTagsProps> = ({
     <div className={styles[direction]}>
       {displayedTags.map((tag) => (
         <div className={styles.tag} key={`${id}-${tag}`}>
-          <PostTag link={tag.link}>{tag.name}</PostTag>
+          <PostTag link={tag.link} linkView={linkView}>{tag.name}</PostTag>
         </div>
       ))}
     </div>

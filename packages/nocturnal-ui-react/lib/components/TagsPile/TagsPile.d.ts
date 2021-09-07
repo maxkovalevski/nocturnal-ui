@@ -1,11 +1,12 @@
 import { FC } from "react";
-interface TagData {
+import { LinkView } from "../../typings/LinkView";
+export interface TagData {
     name: string;
     count: number;
-    linkPrefix: string;
+    link: string;
 }
-interface TagsPile {
+export interface TagsPileProps {
     tags: TagData[];
+    linkView?: LinkView;
 }
-export declare const TagsPile: FC<TagsPile>;
-export {};
+export declare const TagsPile: FC<TagsPileProps>;

@@ -1,7 +1,9 @@
 import { FC } from "react";
-import { LinkProps } from "@reach/router";
-interface NavLinkProps extends Pick<LinkProps<{}>, "to" | "className" | "children"> {
+import { LinkView } from "../../typings/LinkView";
+export interface NavLinkProps {
     isActive?: boolean;
+    linkView?: LinkView;
+    to: string;
+    className?: string;
 }
 export declare const NavLink: FC<NavLinkProps>;
-export {};

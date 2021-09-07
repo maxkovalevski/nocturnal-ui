@@ -1,8 +1,9 @@
 import { FC } from "react";
-import { LinkProps } from "@reach/router";
-interface PaginationLinkProps extends Pick<LinkProps<{}>, "to" | "children"> {
+import { LinkView } from "../../typings/LinkView";
+export interface PaginationLinkProps {
+    to: string;
     isActive?: boolean;
     isDisabled?: boolean;
+    linkView?: LinkView;
 }
 export declare const PaginationLink: FC<PaginationLinkProps>;
-export {};
