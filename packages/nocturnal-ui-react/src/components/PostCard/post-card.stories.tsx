@@ -13,7 +13,7 @@ export default {
 
 const Template: Story<PostCardProps> = (args) => (
   <div style={{ maxWidth: "800px" }}>
-    <PostCard {...args} />
+    <PostCard {...args} linkView={({ to, className, children }) => <a href={to} className={className}>{children}</a>} />
   </div>
 );
 

@@ -5,15 +5,17 @@ import { Logo } from "../Logo";
 import { Container } from "../Container";
 
 import { NavItem } from "../../common/types";
+import { LinkView } from "../../typings/LinkView";
 
 import * as headerStyles from "./header.module.css";
 
 interface HeaderProps {
   logoTitle: string;
   navItems: NavItem[];
+  linkView?: LinkView;
 }
 
-export const Header: FC<HeaderProps> = ({ logoTitle, navItems }) => {
+export const Header: FC<HeaderProps> = ({ logoTitle, navItems, linkView }) => {
   // const { pathname } = useLocation();
 
   return (
@@ -22,7 +24,7 @@ export const Header: FC<HeaderProps> = ({ logoTitle, navItems }) => {
         <div className={headerStyles.inner}>
           <Logo title={logoTitle} />
           <div className={headerStyles.row}>
-            <Navbar items={navItems} />
+            <Navbar items={navItems} linkView={linkView} />
           </div>
         </div>
       </Container>
