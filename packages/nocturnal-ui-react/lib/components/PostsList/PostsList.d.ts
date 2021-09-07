@@ -1,4 +1,5 @@
 import React, { FC } from "react";
+import { LinkView } from "../../typings/LinkView";
 export interface Post {
     id?: string;
     title: string;
@@ -15,5 +16,6 @@ export interface PostsListProps {
     posts: Post[];
     gridView?: "row" | "tile";
     imgRender?(post: Post): React.ReactNode;
+    linkView?: LinkView;
 }
 export declare const PostsList: FC<PostsListProps>;
