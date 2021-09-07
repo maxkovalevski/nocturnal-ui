@@ -1730,6 +1730,17 @@
     call-me-maybe "^1.0.1"
     glob-to-regexp "^0.3.0"
 
+"@mxkvl/nocturnal-ui-react@0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@mxkvl/nocturnal-ui-react/-/nocturnal-ui-react-0.0.1.tgz#b3703e7a1846e808616e30b8469f828485d16316"
+  integrity sha512-PhJ+yYkMkxaMo9YpbocUNapdJpF7KSaTuAf0gwi7UuTwggivgIJliFHAJk9KtcLi9pIUYUiL1y8cjlwuVSc7UQ==
+  dependencies:
+    "@reach/router" "^1.3.4"
+    prism-react-renderer "^1.2.1"
+    react "^17.0.2"
+    react-dom "^17.0.2"
+    typescript "^4.3.2"
+
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"
   resolved "https://registry.yarnpkg.com/@nodelib/fs.scandir/-/fs.scandir-2.1.5.tgz#7619c2eb21b25483f6d167548b4cfd5a7488c3d5"
