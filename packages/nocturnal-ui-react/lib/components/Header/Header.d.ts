@@ -5,6 +5,7 @@ interface HeaderProps {
     logoTitle: string;
     navItems: NavItem[];
     linkView?: LinkView;
+    currentPath?: string;
 }
 export declare const Header: FC<HeaderProps>;
 export {};
