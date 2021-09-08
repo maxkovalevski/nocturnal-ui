@@ -11,6 +11,7 @@ export { PostTags } from "./PostTags";
 export { PostInfo } from "./PostInfo";
 export { PostBanner } from "./PostBanner";
 export { PostsSection } from "./PostsSection";
+export { PostContent } from './PostContent';
 export { ContentCard } from "./ContentCard";
 export { PageTitle } from "./PageTitle";
 export { Container } from "./Container";
