@@ -1,10 +1,9 @@
 import React, { FC } from "react";
 
 import { ContentCard } from "../ContentCard";
+import { PostContentImage } from "../PostContentImage";
 import { PostInfo } from "../PostInfo";
 import { PostTags } from "../PostTags";
-
-import * as styles from "./post-content.module.css";
 
 export interface PostContentProps {
   title: string;
@@ -29,12 +28,7 @@ export const PostContent: FC<PostContentProps> = ({
     <article>
       <ContentCard
         topView={
-          imgSrc || imgView ? (
-            <div className={styles.thumbnail}>
-              {imgSrc && <img src={imgSrc} alt={title} />}
-              {imgView && imgView}
-            </div>
-          ) : null
+          <PostContentImage imgSrc={imgSrc} imgView={imgView} altText={title} />
         }
       >
         <header>

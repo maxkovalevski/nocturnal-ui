@@ -4,8 +4,6 @@ declare const styles: {
   readonly "inner": string;
   readonly "top": string;
   readonly "bottom": string;
-  readonly "light": string;
-  readonly "dark": string;
 };
 export = styles;
 
