@@ -19,6 +19,7 @@ const Template: Story<PostsListProps> = (args) => (
 
 export const Main = Template.bind({});
 Main.args = {
+  imgView: ({ title, imgSrc }) => <img src={imgSrc} alt={title} />,
   posts: [
     {
       id: "1",
