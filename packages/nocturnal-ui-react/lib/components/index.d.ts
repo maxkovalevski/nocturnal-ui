@@ -12,6 +12,7 @@ export { PostInfo } from "./PostInfo";
 export { PostBanner } from "./PostBanner";
 export { PostsSection } from "./PostsSection";
 export { PostContent } from './PostContent';
+export { PostContentImage } from './PostContentImage';
 export { ContentCard } from "./ContentCard";
 export { PageTitle } from "./PageTitle";
 export { Container } from "./Container";
