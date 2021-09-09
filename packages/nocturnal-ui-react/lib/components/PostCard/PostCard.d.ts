@@ -12,7 +12,7 @@ export interface PostCardProps {
     }[];
     link: string;
     imgSrc?: string;
-    imgView?: React.ReactNode;
+    imgView?(post: Pick<PostCardProps, 'imgSrc' | 'title'>): React.ReactNode;
     linkView?: LinkView;
 }
 export declare const PostCard: FC<PostCardProps>;

@@ -22,14 +22,14 @@ export interface Post {
 export interface PostsListProps {
   posts: Post[];
   gridView?: "row" | "tile";
-  imgRender?(post: Post): React.ReactNode;
+  imgView?(post: Pick<Post, 'imgSrc' | 'title'>): React.ReactNode;
   linkView?: LinkView;
 }
 
 export const PostsList: FC<PostsListProps> = ({
   posts,
   gridView = "row",
-  imgRender,
+  imgView,
   linkView
 }) => {
   return (
@@ -39,7 +39,7 @@ export const PostsList: FC<PostsListProps> = ({
           key={post.id || index}
           {...post}
           view={gridView}
-          imgView={imgRender ? () => imgRender?.(post) : undefined}
+          imgView={imgView}
           linkView={linkView}
         />
       ))}

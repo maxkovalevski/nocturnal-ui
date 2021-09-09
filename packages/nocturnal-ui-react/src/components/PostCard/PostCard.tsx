@@ -22,7 +22,7 @@ export interface PostCardProps {
   }[];
   link: string;
   imgSrc?: string;
-  imgView?: React.ReactNode;
+  imgView?(post: Pick<PostCardProps, 'imgSrc' | 'title'>): React.ReactNode;
   linkView?: LinkView;
 }
 
@@ -38,11 +38,12 @@ export const PostCard: FC<PostCardProps> = ({
   imgView,
   linkView = ({ to, children, ...props }) => <a href={to} {...props}>{children}</a>
 }) => {
+  console.log(imgView)
   return (
     <article className={styles[view]}>
       {(imgSrc || imgView) && linkView?.({ to: link, className: styles.thumbnail, children: <>
-          {imgSrc && <img src={imgSrc} alt={title} />}
-          {imgView && imgView}
+          {imgSrc && !imgView && <img src={imgSrc} alt={title} />}
+          {imgView && imgView({ imgSrc, title })}
       </>})}
       <div className={styles.content}>
         <header className={styles.header}>
