@@ -1,6 +1,6 @@
 {
   "name": "nocturnal-ui-react",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "license": "MIT",
   "dependencies": {
     "prism-react-renderer": "^1.2.1",
@@ -12,7 +12,7 @@
     "generate:css-d-ts": "tcm src/components",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "build": "rollup -c",
+    "build": "yarn generate:css-d-ts && rollup -c",
     "dev": "rollup -c -w"
   },
   "devDependencies": {
